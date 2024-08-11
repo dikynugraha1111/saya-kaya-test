@@ -39,7 +39,7 @@ class _MyAppState extends State<MyApp> {
       client: client,
       child: MaterialApp(
         showSemanticsDebugger: false,
-        title: 'Flutter Demo',
+        title: 'Pokokdex',
         themeMode: ThemeMode.dark,
         theme: AppTheme.lightTheme(context),
         darkTheme: AppTheme.darkTheme(context),
