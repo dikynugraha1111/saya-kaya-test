@@ -1,7 +1,4 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pokodek/core/theme/app_color.dart';
 import 'package:pokodek/feature/detail_pokemon/logic/detail_pokemon_cubit.dart';

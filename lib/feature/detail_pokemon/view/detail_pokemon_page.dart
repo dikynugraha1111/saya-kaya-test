@@ -33,7 +33,7 @@ class DetailPokemonPage extends StatelessWidget {
               return Center(child: Text(state.errorMessage));
             }
 
-            return DetailPokemonView();
+            return const DetailPokemonView();
           },
         ),
       ),

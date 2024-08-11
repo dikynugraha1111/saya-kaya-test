@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:graphql_flutter/graphql_flutter.dart';
 import 'package:pokodek/core/repositories/pokemon_response.dart';
 import 'package:pokodek/core/service/pokemon_node.dart';

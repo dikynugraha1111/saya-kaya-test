@@ -15,7 +15,7 @@ class ListPokemonPage extends StatelessWidget {
     return BlocProvider(
       create: (context) =>
           ListPokemonCubit(PokemonServiceImpl.create())..init(),
-      child: Scaffold(
+      child: const Scaffold(
         body: ListPokemonView(),
       ),
     );

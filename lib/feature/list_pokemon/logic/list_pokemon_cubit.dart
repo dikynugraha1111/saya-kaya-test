@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pokodek/core/exception/app_exception.dart';
@@ -62,8 +60,6 @@ class ListPokemonCubit extends Cubit<ListPokemonState> {
           state.lastIndex - 1,
           currentlyLength - 1,
         );
-        log("Currently Length => $currentlyLength");
-        log("Last Index => ${state.lastIndex}");
         bool isLarstIndex = currentlyLength < state.lastIndex + 5;
         tempPokemons = [...response, ...customPickedRange];
         emit(state.copyWith(
