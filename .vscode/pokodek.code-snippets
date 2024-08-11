@@ -1,0 +1,88 @@
+
+{
+	"service layer amanata": {
+		"prefix": "pokodek_service",
+		"body": [
+		  "import 'package:amanata/core/injections/injection.dart';",
+		  "import 'package:amanata/core/network/header_provider.dart';",
+		  "import 'package:amanata/core/network/http_client.dart';",
+		  "",
+		  "abstract class YourService {}",
+		  "",
+		  "class YourServiceImpl implements YourService {",
+		  "  final HttpClient httpClient;",
+		  "  final HeaderProvider headerProvider;",
+		  "",
+		  "  YourServiceImpl({",
+		  "    required this.httpClient,",
+		  "    required this.headerProvider,",
+		  "  });",
+		  "",
+		  "  factory YourServiceImpl.create() {",
+		  "    return YourServiceImpl(",
+		  "      httpClient: Injection.httpClient,",
+		  "      headerProvider: Injection.headerProvider,",
+		  "    );",
+		  "  }",
+		  "}",
+		  ""
+		],
+		"description": "service layer pokodek"
+	  },
+
+	  "endpoint layer amanata": {
+		"prefix": "pokodek_endpoint",
+		"body": [
+		  "import 'package:amanata/core/network/url_builder.dart';",
+		  "",
+		  "class YourEndpoint {",
+		  "  YourEndpoint();",
+		  "",
+		  "  Uri yourEndpoint() {",
+		  "    return createUrl(",
+		  "      path: \"pos/pembelian/supplier/data\",",
+		  "      queryParameters: {",
+		  "        \"id\": id,",
+		  "      },",
+		  "    );",
+		  "  }",
+		  "",
+		  "}",
+		  ""
+		],
+		"description": "endpoint layer pokodek"
+	  },
+
+	  "error handler layer amanata": {
+		"prefix": "pokodek_error_handler",
+		"body": [
+			"if (state.status.isFailed) {",
+				"if (state.errorMessage == \"TOKEN_EXPIRED\") {",
+				  "RepositoryProvider.of<AuthenticationRepository>(context)",
+					  ".logout();",
+				"} else {",
+				  "AppTopSnackBar(context).showDanger(state.errorMessage);",
+				"}",
+			  "}",
+		],
+		"description": "error handler layer pokodek"
+	  },
+
+	  "error logic handler layer amanata": {
+		"prefix": "pokodek_error_logic_handler",
+		"body": [
+			"on AppException catch (e) {",
+				"emit(state.copyWith(",
+				  "status: GlobalState.failed,",
+				  "errorMessage: e.message,",
+				"));",
+			  "} catch (e) {",
+				"emit(state.copyWith(",
+				  "status: GlobalState.failed,",
+				  "errorMessage: e.toString(),",
+				"));",
+			  "}",
+		],
+		"description": "error handler layer pokodek"
+	  },
+}
