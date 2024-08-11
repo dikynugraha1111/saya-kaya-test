@@ -1,17 +1,21 @@
-# pokodek
+# Readme
 
-A new Flutter project.
+How to build this app and run the application.
 
-## Getting Started
+### Prerequisite
+This project using FVM to manage Flutter version who run the App. To install FVM, please referrer https://fvm.app/documentation/getting-started/installation 
+Notes : In this project, used Flutter V.3.13.0 
 
-This project is a starting point for a Flutter application.
+### How to Build the App
+```bash
+fvm flutter build apk
+```
 
-A few resources to get you started if this is your first Flutter project:
+### How to Run the App
+```bash
+fvm flutter run
+```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# saya-kaya-test
+
+
